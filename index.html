@@ -578,6 +578,106 @@
     color: var(--text-muted);
   }
 
+  /* ── Content & Writing ── */
+  .content-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .content-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--gradient-1);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .content-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(110, 231, 183, 0.3);
+    background: var(--bg-card-hover);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .content-card:hover::before { opacity: 1; }
+
+  .content-icon {
+    width: 60px; height: 60px;
+    min-width: 60px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(110, 231, 183, 0.1), rgba(59, 130, 246, 0.1));
+    border: 1px solid rgba(110, 231, 183, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .content-icon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .content-details {
+    flex: 1;
+  }
+
+  .content-details h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.01em;
+  }
+
+  .content-details p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .content-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+  }
+
+  .content-link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s;
+  }
+
+  .content-link:hover {
+    gap: 0.8rem;
+  }
+
+  .content-link:hover svg {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    .content-card {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
   /* ── Contact ── */
   .contact-section {
     text-align: center;
@@ -668,6 +768,7 @@
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#content">Content</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -877,6 +978,28 @@
   </div>
 </section>
 
+<!-- Content & Writing -->
+<section id="content">
+  <div class="reveal">
+    <div class="section-label">Content & Writing</div>
+    <h2 class="section-title">Blog & Articles</h2>
+    <p class="section-desc">Sharing insights on ML engineering, cloud architecture, and building production AI systems.</p>
+  </div>
+  <div class="content-card reveal">
+    <div class="content-icon">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+    </div>
+    <div class="content-details">
+      <h3>Medium Blog</h3>
+      <p>Technical articles and tutorials covering AWS services, machine learning workflows, MLOps best practices, and real-world engineering experiences from building production systems.</p>
+      <a href="https://medium.com/@jobvelpurisrilakshmisri" target="_blank" class="content-link">
+        Read Articles
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- Skills -->
 <section id="skills">
   <div class="reveal">
@@ -982,7 +1105,7 @@
     <p class="section-desc">Interested in collaborating on ML infrastructure, cloud-native systems, or scalable AI platforms? Let's talk.</p>
   </div>
   <div class="contact-links reveal">
-    <a href="mailto:jobvelpurisrilakshmisri@gmail.com" class="contact-link">
+    <a href="/cdn-cgi/l/email-protection#751f1a170310190500071c06071c19141e061d181c06071c351218141c195b161a18" class="contact-link">
       <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       Email
     </a>
